@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.revo.controller.RevoLoginController">
+   <children>
+      <AnchorPane layoutX="65.0" prefHeight="392.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="248.0" prefWidth="500.0">
+                     <children>
+                        <TextField fx:id="name" layoutX="5.0" layoutY="85.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <PasswordField fx:id="password" layoutX="5.0" layoutY="135.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <Label layoutX="5.0" layoutY="65.0" styleClass="item-title" text="Name" />
+                        <Label layoutX="5.0" layoutY="115.0" styleClass="item-title" text="Password" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <Button defaultButton="true" layoutX="180.0" layoutY="250.0" mnemonicParsing="false" onAction="#gotoLogin" text="Login" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0" />
+            <Button layoutX="180.0" layoutY="284.0" mnemonicParsing="false" onAction="#gotoRegister" text="Register" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
