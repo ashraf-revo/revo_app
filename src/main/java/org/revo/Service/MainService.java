@@ -5,4 +5,9 @@ package org.revo.Service;
  */
 public interface MainService {
     boolean CheckLogin(String name, String password);
+
+    void SerializeData(String Path);
+
+    void DeSerializeData(String Path);
+
 }

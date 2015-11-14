@@ -1,5 +1,6 @@
 package org.revo.controller
 
+import javafx.application.Platform
 import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
@@ -9,6 +10,8 @@ import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
+import javafx.stage.DirectoryChooser
+import javafx.stage.FileChooser
 import org.controlsfx.control.Notifications
 import org.revo.Revo
 import org.revo.Util.App
@@ -90,4 +93,31 @@ class RevoProfileController extends App implements Initializable {
     void save(ActionEvent event) {
 
     }
+
+    void serialize(ActionEvent event) {
+        DirectoryChooser chooser = new DirectoryChooser();
+        chooser.title = "Select File"
+        chooser.initialDirectory = new File(System.getProperty("user.home"))
+        File file = chooser.showDialog(revo.stage)
+        if (file) {
+            mainService.SerializeData(file.path+File.separator+"data.out")
+        }
+    }
+
+    void deserialize(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.title = "Select File"
+        fileChooser.initialDirectory = new File(System.getProperty("user.home"))
+        fileChooser.extensionFilters.add(new FileChooser.ExtensionFilter("Serialized Object", "*.out"))
+        File file = fileChooser.showOpenDialog(revo.stage)
+        if (file) {
+            mainService.DeSerializeData(file.path)
+            data.items = observableList()
+        }
+    }
+
+    void exit(ActionEvent event) {
+        Platform.exit()
+    }
+
 }

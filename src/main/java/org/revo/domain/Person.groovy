@@ -11,7 +11,7 @@ import javax.persistence.*
  */
 @Canonical
 @Entity
-class Person {
+class Person implements Serializable {
     @Id
     @GeneratedValue
     Long id
@@ -20,12 +20,12 @@ class Person {
     @Temporal(TemporalType.DATE)
     Date date = new Date()
     @Transient
-    SimpleStringProperty idProperty
+    transient SimpleStringProperty idProperty
     @Transient
-    SimpleStringProperty nameProperty
+    transient SimpleStringProperty nameProperty
     @Transient
-    SimpleStringProperty phoneProperty
+    transient SimpleStringProperty phoneProperty
     @Transient
-    SimpleObjectProperty<Date> dateProperty
+    transient SimpleObjectProperty<Date> dateProperty
 
 }

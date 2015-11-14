@@ -45,6 +45,7 @@ class Revo extends AbstractJavaFxApplicationSupport {
         stage.resizable = false
         showLoginPage()
         primaryStage.show()
+
     }
 
     void showLoginPage() {
